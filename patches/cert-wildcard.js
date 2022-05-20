@@ -5,7 +5,7 @@ module.exports = (manifests, _options, {config}) => {
     return manifests
   }
   
-  const mainNamespace = manifests.find((manifest)=>manifest.kind==="Namespace" && manifest.metadata?.annotations?.["kubeworkflow/mainNamespace"]==='true')
+  const mainNamespace = manifests.find((manifest)=>manifest.kind==="Namespace" && manifest.metadata?.annotations?.["kontinuous/mainNamespace"]==='true')
   if(mainNamespace){
     if(!mainNamespace.metadata){
       mainNamespace.metadata = {}
